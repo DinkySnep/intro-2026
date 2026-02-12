@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5514923046925676449}
   - component: {fileID: 5514923046925676450}
   - component: {fileID: 4296597101480461212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Apple Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,6 +68,7 @@ MonoBehaviour:
   edgeDist: 10
   flipChance: 0.01
   appleSpawnRate: 1
+  appleDropDelay: 2
 --- !u!1 &5514923047018219105
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +81,7 @@ GameObject:
   - component: {fileID: 5514923047018219133}
   - component: {fileID: 5514923047018219134}
   - component: {fileID: 5514923047018219135}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +179,7 @@ GameObject:
   - component: {fileID: 5514923047665832271}
   - component: {fileID: 5514923047665832304}
   - component: {fileID: 5514923047665832305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}

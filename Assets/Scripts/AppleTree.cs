@@ -12,13 +12,23 @@ public class AppleTree : MonoBehaviour
 
     public float edgeDist = 10f;
 
-    public float flipChance = .01f;
+    public float flipChance = 0.02f;
 
     public float appleSpawnRate = 1f;
+
+    public float appleDropDelay = 2f;
 
     void Start()
     {
         // Initalize object and begin dropping apples
+        Invoke(nameof(DropApple), 2f);
+    }
+
+    void DropApple()
+    {
+        GameObject apple = Instantiate<GameObject>(applePrefab);
+        apple.transform.position = transform.position;
+        Invoke(nameof(DropApple), appleDropDelay);
     }
 
     void Update()

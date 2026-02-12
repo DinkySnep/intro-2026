@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "intro 2026.sln"
+    "dotnet.defaultSolution": "intro-2026.sln"
 }
