@@ -7,6 +7,7 @@ public class AppleTree : MonoBehaviour
     [Header("inscribed")]
 
     public GameObject applePrefab;
+    public GameObject bombPrefab;
 
     public float speed = 1f;
 
@@ -18,10 +19,16 @@ public class AppleTree : MonoBehaviour
 
     public float appleDropDelay = 2f;
 
+    public float bombSpawnRate = 1f;
+    public float bombSpawnRateChance = 0.02f;
+
+    public float bombDropDelay = 2f;
+
     void Start()
     {
         // Initalize object and begin dropping apples
         Invoke(nameof(DropApple), 2f);
+        Invoke(nameof(DropBomb), 4f);
     }
 
     void DropApple()
@@ -29,6 +36,13 @@ public class AppleTree : MonoBehaviour
         GameObject apple = Instantiate<GameObject>(applePrefab);
         apple.transform.position = transform.position;
         Invoke(nameof(DropApple), appleDropDelay);
+    }
+
+    void DropBomb()
+    {
+        GameObject bomb = Instantiate<GameObject>(bombPrefab);
+        bomb.transform.position = transform.position;
+        Invoke(nameof(DropBomb), bombDropDelay);
     }
 
     void Update()
@@ -56,5 +70,10 @@ public class AppleTree : MonoBehaviour
         {
             speed *= -1;
         }
+        //  else if (Random.value < bombSpawnRateChance)
+        //  {
+        //      GameObject bomb = Instantiate<GameObject>(bombPrefab);
+        //      bomb.transform.position = transform.position;
+        //  }
     }
 }

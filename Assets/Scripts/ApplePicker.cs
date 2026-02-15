@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class ApplePicker : MonoBehaviour
 {
 
     [Header("Inscribed")]
 
     public GameObject basketPrefab;
+
+    public BasketCounter BasketCounter;
 
     public int numbaskets = 3;
 
@@ -47,6 +50,8 @@ public class ApplePicker : MonoBehaviour
 
         basketList.RemoveAt(basketIndex);
         Destroy(basketGO);
+
+        BasketCounter.baskets -= 1;
 
         if (basketList.Count == 0)
         {
